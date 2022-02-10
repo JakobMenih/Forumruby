@@ -73,6 +73,6 @@ class PostsController < ApplicationController
     end
 
     def authorize_user!
-      redirect_back fallback_location: rooth_path, alert: 'Error'unless current_user == @post.user
+      redirect_back fallback_location: root_path, alert: 'Error' unless current_user == @post.user
     end
   end
