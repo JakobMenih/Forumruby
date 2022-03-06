@@ -180,6 +180,8 @@ Devise.setup do |config|
   # Range for password length.
   config.password_length = 6..128
 
+  config.omniauth :facebook, "4660204134088555", "83df62ef8f044d5168f5d835043c6440"
+
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
@@ -272,6 +274,14 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id),
+                  Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile,email'
+  config.omniauth :github, Rails.application.credentials.dig(:github, :github_client_id),
+                  Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user,public_repo'
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id),
+                  Rails.application.credentials.dig(:google, :google_client_secret), scope: 'userinfo.email,userinfo.profile'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
