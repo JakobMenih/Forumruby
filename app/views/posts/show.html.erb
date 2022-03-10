@@ -1,0 +1,33 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h1 class="text-center"><%= @post.title %></h1>
+    <hr>
+    <div class="my-4">
+      <%= simple_format(@post.body) %>
+    </div>
+
+    <%= link_to 'Back', posts_path, class: 'btn btn-light' %>
+  </div>
+</div>
+<div class="card my-1">
+  <div class="card-body">
+    <h3 class="font-weight-bold">Comments</h3>
+    <br>
+    <hr>
+    <br>
+    <%= render @post.comments %>
+    <br>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <br>
+       <br>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <br>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
