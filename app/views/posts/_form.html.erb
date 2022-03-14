@@ -20,6 +20,9 @@
     <%= form.label :body %>
     <%= form.text_area :body, class: 'form-control' %>
   </div>
+  <div class="field">
+    <%= form.file_field :photo %>
+  </div>
 <br>
   <%= form.submit "Save Post", class: 'btn btn-primary' %>
   <br>
