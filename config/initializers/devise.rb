@@ -182,6 +182,10 @@ Devise.setup do |config|
 
   config.omniauth :facebook, "4660204134088555", "83df62ef8f044d5168f5d835043c6440"
 
+  google_client_id = Rails.application.credentials.google_oauth2 [:client_id]
+  google_client_secret = Rails.application.credentials.google_oauth2 [:client_secret]
+  config.omniauth :google_oauth2, google_client_id, google_client_secret, scope: 'userinfo.email,userinfo.profile', skip_jwt: true
+
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.

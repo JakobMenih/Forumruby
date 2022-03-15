@@ -17,6 +17,9 @@
           <%= image_pack_tag('logo.png', class: 'logo-navbar') %>
         <% end %>
       </div>
+        <% if current_user %>
+          <%= current_user.name %>
+        <% end %>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <%= display_session_links %>
       </div>

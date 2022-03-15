@@ -41,6 +41,7 @@ gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store'
 gem 'google_sign_in'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
 
 gem 'rails_admin'
 gem 'kaminari'
