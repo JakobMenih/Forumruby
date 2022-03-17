@@ -180,7 +180,9 @@ Devise.setup do |config|
   # Range for password length.
   config.password_length = 6..128
 
-  config.omniauth :facebook, "4660204134088555", "83df62ef8f044d5168f5d835043c6440"
+  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+
+  # config.omniauth :google_oauth2, "client_id", "client_secret"
 
   google_client_id = Rails.application.credentials.google_oauth2 [:client_id]
   google_client_secret = Rails.application.credentials.google_oauth2 [:client_secret]
