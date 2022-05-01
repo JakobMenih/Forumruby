@@ -180,7 +180,7 @@ Devise.setup do |config|
   # Range for password length.
   config.password_length = 6..128
 
-  config.omniauth :facebook, "4660204134088555", "83df62ef8f044d5168f5d835043c6440"
+  config.omniauth :facebook, "app id", "secret"
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
